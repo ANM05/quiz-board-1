@@ -17,16 +17,15 @@ $(document).ready(function(){
     $("#introduction").hide();
     $("#page1").hide();
   });
+
+  });
+
   function traverse(){
     var allListElements = $( "li" );
-    alert($("input","label","div",allListElements).is(":checked"));
-    alert($("input","label","div").closest(".question").attr("id"))
+    alert($("input","label","div",allListElements).is(":checked"));//traverses tree from all li elements and check if input value is checked
+    alert($("input","label","div").closest(".question").attr("id"));//returns the question id after traversing inversely from input memory pointer
+
   }
-  traverse();
-
-
-  
-});
 
 
 //BUSINESS LOGIC
