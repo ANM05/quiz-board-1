@@ -1,4 +1,5 @@
 //UI LOGIC
+
 $(document).ready(function(){
   $("#intronav").click(function(){
     $("#introduction").show();
@@ -17,3 +18,8 @@ $(document).ready(function(){
     $("#page1").hide();
   });
 });
+
+//BUSINESS LOGIC
+//get values from pages submitted.
+
+//if qn1,check the value selected and compare with answer stored in variable array here, else continue after submission
