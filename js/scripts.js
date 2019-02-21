@@ -17,9 +17,20 @@ $(document).ready(function(){
     $("#introduction").hide();
     $("#page1").hide();
   });
+  function traverse(){
+    var allListElements = $( "li" );
+    alert($("input","label","div",allListElements).is(":checked"));
+    alert($("input","label","div").closest(".question").attr("id"))
+  }
+  traverse();
+
+
+  
 });
+
 
 //BUSINESS LOGIC
 //get values from pages submitted.
 
-//if qn1,check the value selected and compare with answer stored in variable array here, else continue after submission
+//for every qn id,check the value selected and compare with answer stored in variable array here, else continue after submission
+//pass in qestion id then traverse and check input if checked, if its checked return value
