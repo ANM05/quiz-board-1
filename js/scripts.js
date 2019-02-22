@@ -1,4 +1,8 @@
 //UI LOGIC
+var choices=['question1 : chocolate','question2 : vanilla']
+var questionids=[]
+var answers=[]
+var results=[]
 
 $(document).ready(function(){
   $("#intronav").click(function(){
@@ -18,14 +22,54 @@ $(document).ready(function(){
     $("#page1").hide();
   });
 
-  });
+  
+  $("li").each(function(listitem){       //POINTS TO LIST ELEMENTS MEMORY LOCATION
+    var questionid=(($(this).attr('id')))          //THIS KEYWORD QUERRYS PARTICULAR ELEMENT AT THAT MEMORY LOCATION AND RETURNS THE PARTICULAR ATTRIBUTE REQUIRED ID
+    questionids.push(questionid)
+  }) 
 
-  function traverse(){
-    var allListElements = $( "li" );
-    alert($("input","label","div",allListElements).is(":checked"));//traverses tree from all li elements and check if input value is checked
-    alert($("input","label","div").closest(".question").attr("id"));//returns the question id after traversing inversely from input memory pointer
+  traverse();
+  alert(answers)
+  compare();
+  alert(results);
+  
 
-  }
+
+})
+
+function traverse(){
+
+  for(item=0;item<questionids.length;item+=1){
+    if(($("li#"+questionids[item]+" input").is(":checked")===false)){//
+      alert("no selections made")
+    }
+    else{
+      var answer=($("li#"+questionids[item]+" input:checked").val())
+      answers.push(answer)
+      
+
+    }
+    
+      
+      }
+
+}
+function compare(){
+  for(x=0,y=0;x<answers.length,y<questionids.length;x+=1,y+=1){
+    var result= questionids[y] + " : " + answers[x];
+    results.push(result)
+
+    }
+}
+
+
+
+
+
+  
+
+
+
 
 
 //BUSINESS LOGIC
