@@ -10,7 +10,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-3">
-        <nav class="navbar flex-column">
+        <nav class="navbar navbar-light bg-light flex-column">
           <a href="index.html" class="navbar-brand">
             <img src="https://cdn.dribbble.com/users/60166/screenshots/4322247/q_logo.jpg" width="80" height="80" alt="">
             <span class="brandname">
@@ -30,7 +30,7 @@
           <header>Ensure you Answer all of the questions</header>
         </div>
         <div class="card" id="introduction">
-          <h5 class="card-title">Introduction</h5>
+          <h5 class="card-title">Introduction</h6>
           <div class="card-body">
             <p>Online quizzes are a popular form of entertainment for web surfers. Online quizzes are generally free to play and for entertainment purposes only though some online quiz websites offer prizes. Websites feature online quizzes on many subjects. One popular type of online quiz is a personality quiz or relationship quiz which is similar to what can be found in many women's or teen magazines. Websites hosting quizzes include Quizilla, FunTrivia, OkCupid, Sporcle, and Quizlet.
             </p>
@@ -46,14 +46,15 @@
             <h6>Other</h6>
             Most online quizzes are to be taken lightly. The results do not often reflect the true personality or relationship. They are also rarely psychometrically valid. However, they may occasion reflection on the subject of the quiz and provide a springboard for a person to explore his or her emotions, beliefs, or actions.
           </div>
-          <a href="#page1" id="next"><button type="button" name="button">NEXT</button></a>
+
 
         </div>
+        <a href="#page1" id="next"><button type="button" name="button">Next</button></a>
 
         <div class="card" id="page1">
           <h5 class="card-title">Page 1</h6>
           <div class="card-body">
-              <ol>
+              <ul>
                   <li class="question" id="question1"> What is your best chocolate?
                     <div class="radio" >
                     <label>
@@ -96,15 +97,17 @@
 
 
 
-              </ol>
+              </ul>
               <div class="alert" class="alert alert-warning alert-dismissible fade show" role="alert">
                 <button id="alert" type="button" class="close" data-dismiss="alert" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div>
-                <a class="nextpage" href="#page2"><button>next</button></a>
-                <a href="#introduction" class="previouspage"><button>back</button></a>
+              <div class="nextpage">
+                <a id="nextpage" href="#page2"><button>next</button></a>
+              </div>
+              <div class="previouspage">
+                <a href="#introduction" id="previouspage"><button>back</button></a>
               </div>
 
           </div>
@@ -156,15 +159,17 @@
             </ol>
 
             </div>
-            <div>
-              <a href="#page1" class="previouspage1"><button>back</button></a>
+            <div class="previouspage">
+              <a href="#page1" id="previouspage1"><button>back</button></a>
+            </div>
+            <div class="submit">
               <button onclick="traverse()" id="submit">Submit</button>
             </div>
+            <div id="marks">
 
+            </div>
         </div>
-        <div id="marks">
 
-        </div>
       </div>
 
     </div>
