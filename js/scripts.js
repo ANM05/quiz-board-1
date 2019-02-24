@@ -28,14 +28,9 @@ $(document).ready(function(){
     var questionid=(($(this).attr('id')))          //THIS KEYWORD QUERRYS PARTICULAR ELEMENT AT THAT MEMORY LOCATION AND RETURNS THE PARTICULAR ATTRIBUTE REQUIRED ID
     questionids.push(questionid)
   }) 
-
-  traverse();
-  concantenate();
-  alert(results);
-  compare(results,choices)
-  alert(marks);
+ // alert(questionids)
+ // traverse()
   
-
 
 })
 
@@ -49,30 +44,28 @@ $(document).ready(function(){
 function traverse(){
 
   for(item=0;item<questionids.length;item+=1){
-    if(($("li#"+questionids[item]+" input").is(":checked")===true)){//
+    if(($("li#"+questionids[item]+" input").is(":checked")===true)){//FOR ANY LIST ITEM WITH ID FIND INPUT ELEMENT THATS CHECKED AND RETURN VALUE
       
       var answer=($("li#"+questionids[item]+" input:checked").val())
       answers.push(answer)//ANSWERS GLOBAL VARIABLE
-    }
-    else{
-      alert("no selections made") 
-
+      
     }
     
-      
-      }
-
+}
+alert(answers)
+concantenate()
 }
 
 
 function concantenate(){//FUNCTION TO CONCAT QUESTIONID AND ANSWER
   for(x=0,y=0;x<answers.length,y<questionids.length;x+=1,y+=1){
+
     try{
-      if(answers[x]===undefined) throw "You must select value"
+      if(answers[x]===undefined) throw "You must select value"///TRY THE FOLLOWING CODE TO REMOVE BUG AT  CONCANTENATE FUNC THAT CONCATS ELEMENT WITH AN UNDEFINED VALUE ANG GIVES A MARK
 
       else{
         var result= questionids[y] + ":" + answers[x];
-        results.push(result)//RESULTS GLOBAL VARIABLE
+        results.push(result)//RESULTS IS A GLOBAL VARIABLE
       }
     }
     catch(err){
@@ -80,6 +73,10 @@ function concantenate(){//FUNCTION TO CONCAT QUESTIONID AND ANSWER
     }
 
     }
+  
+  alert(results)
+  compare(results,choices)
+
 }
 
 marks=0;
@@ -94,14 +91,56 @@ function compare(list1,list2){///FUNCTION TO COMPARE ENTITIES IN TWO DIFFERENT A
     while(list1[x] in list2)
     
     }
-    
+    alert(marks)
 }
 
+//function next(){
+  // $("li").each(function(listitem){       //POINTS TO LIST ELEMENTS MEMORY LOCATION
+    //var questionid=(($(this).attr('id')))          //THIS KEYWORD QUERRYS PARTICULAR ELEMENT AT THAT MEMORY LOCATION AND RETURNS THE PARTICULAR ATTRIBUTE REQUIRED ID
+    //questionids.push(questionid)
+  //}) 
 
+//  for(item=0;item<questionids.length;item+=1){
+//    try{
+//      if(($("li#"+questionids[item]+" input").is(":checked")===false)) throw "#alert"
 
+  //    else{
+
+    //  }
   
+  //}
+  //finally{
+    
+//}
+//}
+//}
 
+$('.nextpage').click(function(){//ONCLICK, PERFORM CHECK IF ANY LI ITEM IS UNCHECKED, IF SO ALERT NEED TO ANSWER QUESTION ELSE GO TO NEXT PAGE
+  var pageids=[]
 
+  $("li").each(function(listitem){       //
+    
+    var questionid=(($(this).attr('id')))
+    pageids.push(questionid)
+    
+  })
+  for(item=0;item<pageids.length;item+=1){
+    if($("li#"+pageids[item]+" input").is(":checked")===false){
+      $('#alert').show();
+    }
+    else {
+      location.replace(this.href)
+      $('#page1').hide();
+      $('#page2').show();
+    }
+  }
+  
+  
+})
 
-
-
+$('.previouspage').click(function(){
+  location.replace(this.href)
+  $('#page1').show()
+  $('#page2').hide()
+      
+})
