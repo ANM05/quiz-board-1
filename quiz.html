@@ -9,36 +9,55 @@
 <body>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-2">
-        <nav class="navbar navbar-light bg-light flex-column">
-          <a href="#" class="navbar-brand">quizboard</a>
+      <div class="col-md-3">
+        <nav class="navbar flex-column">
+          <a href="index.html" class="navbar-brand">
+            <img src="https://cdn.dribbble.com/users/60166/screenshots/4322247/q_logo.jpg" width="80" height="80" alt="">
+            <span class="brandname">
+              uizBoard
+            </span>
+          </a>
           <div class="navbar-nav flex-column">
-            <a href="#introduction" class="nav-item nav-link" id="intronav">Introduction</a>
+            <a type="pill"href="#introduction" class="nav-item nav-link" id="intronav">Introduction</a>
             <a href="#page1" class="nav-item nav-link"id="page1nav">page 1</a>
             <a href="#page2" class="nav-item nav-link" id="page2nav">page 2</a>
           </div>
 
         </nav>
       </div>
-      <div class="col md-10">
+      <div class="col md-9">
         <div class="jumbotron">
-          <header>QuizBoard</header>
+          <header>Ensure you Answer all of the questions</header>
         </div>
         <div class="card" id="introduction">
           <h5 class="card-title">Introduction</h5>
           <div class="card-body">
-            
-            </div>
+            <p>Online quizzes are a popular form of entertainment for web surfers. Online quizzes are generally free to play and for entertainment purposes only though some online quiz websites offer prizes. Websites feature online quizzes on many subjects. One popular type of online quiz is a personality quiz or relationship quiz which is similar to what can be found in many women's or teen magazines. Websites hosting quizzes include Quizilla, FunTrivia, OkCupid, Sporcle, and Quizlet.
+            </p>
+            <h6>Blog quizzes</h6>
+            <p>Blog quizzes (also known as quiz blog) refer to a specific genre of quizzes which are conducted by the quizzers on blogs.[citation needed] Blog quizzes may be about verbs[1] or a wide range of other topics.
+            </p>
+            <h6>Educational quizzes</h6>
+            <p>Some companies and schools use online quizzes as a means to educate their employees or students respectively. Popular websites hosting quizzes for this purpose include Quizlet and Revision Quiz Maker.
+            </p>
+            <h6>Practical applications</h6>
+            <p>Many online quizzes are set up to actually test knowledge or identify a person's attributes. Some companies use online quizzes as an efficient way of testing a potential hire's knowledge without that candidate needing to travel. Online dating services often use personality quizzes to find a match between similar members.
+            </p>
+            <h6>Other</h6>
+            Most online quizzes are to be taken lightly. The results do not often reflect the true personality or relationship. They are also rarely psychometrically valid. However, they may occasion reflection on the subject of the quiz and provide a springboard for a person to explore his or her emotions, beliefs, or actions.
           </div>
+          <a href="#page1" id="next"><button type="button" name="button">NEXT</button></a>
+
+        </div>
 
         <div class="card" id="page1">
-          <h5 class="card-title">Page 1</h5>
+          <h5 class="card-title">Page 1</h6>
           <div class="card-body">
               <ol>
                   <li class="question" id="question1"> What is your best chocolate?
                     <div class="radio" >
                     <label>
-                      <input type="radio" name="question1" value="chocolate" checked>
+                      <input type="radio" name="question1" value="chocolate" >
                       Chocolate
                     </label>
                   </div>
@@ -54,7 +73,7 @@
                       Cookies & Cream
                     </label>
                   </li>
-    
+
                     <li class="question" id="question2">What is your second best chocolate
                       <div class="radio" >
                       <label>
@@ -64,7 +83,7 @@
                     </div>
                     <div class="radio">
                       <label>
-                        <input type="radio" name="question2" value="vanilla" checked>
+                        <input type="radio" name="question2" value="vanilla">
                         Vanilla
                       </label>
                     </div>
@@ -74,13 +93,12 @@
                         Cookies & Cream
                       </label>
                     </li>
-                    
-                      
-    
+
+
+
               </ol>
-              <div id="alert" class="alert alert-warning alert-dismissible fade show" role="alert">
-                <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <div class="alert" class="alert alert-warning alert-dismissible fade show" role="alert">
+                <button id="alert" type="button" class="close" data-dismiss="alert" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
@@ -88,11 +106,11 @@
                 <a class="nextpage" href="#page2"><button>next</button></a>
                 <a href="#introduction" class="previouspage"><button>back</button></a>
               </div>
-          
+
           </div>
-          </div>
-          <div class="card" id="page2">
-            <h5 class="card-title">Page 2</h5>
+        </div>
+        <div class="card" id="page2">
+            <h5 class="card-title">Page 2</h6>
             <div class="card-body">
               <ol>
                 <li class="question" id="question3"> What is your best chocolate?
@@ -110,11 +128,11 @@
                 </div>
                 <div class="radio">
                   <label>
-                    <input type="radio" name="question3" value="cookiesandcream" checked>
+                    <input type="radio" name="question3" value="cookiesandcream">
                     Cookies & Cream
                   </label>
                 </li>
-  
+
                   <li class="question" id="question4">What is your second best chocolate
                     <div class="radio" >
                     <label>
@@ -134,22 +152,26 @@
                       Cookies & Cream
                     </label>
                   </li>
-  
+
             </ol>
-          
+
             </div>
             <div>
               <a href="#page1" class="previouspage1"><button>back</button></a>
+              <button onclick="traverse()" id="submit">Submit</button>
             </div>
 
-            </div>
-          </div>
-
-          </div>
+        </div>
+        <div id="marks">
 
         </div>
       </div>
-      <script   src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
-      <script src="js/scripts.js" charset="utf-8"></script>
-    </body>
-    </html>
+
+    </div>
+
+  </div>
+      </div>
+  <script   src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
+  <script src="js/scripts.js" charset="utf-8"></script>
+</body>
+</html>
