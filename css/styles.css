@@ -9,12 +9,16 @@
 }
 
 .col-md-3{
-  background-color: #e6e5e9;
+  background-color: #563d7c;
 }
 .navbar{
   margin-top: 10%;
-  background-color: white;
- 
+  border-radius: 2%;
+  border-color: black;
+  box-shadow: black 0px 0px 2px;
+  margin-left: 10%;
+  padding-right: 50%;
+
 }
 
 .navbar-nav{
@@ -27,4 +31,27 @@
   color: rgb(239, 243, 246);
   
 }
+.card{
+  text-align: justify;
+}
 
+#next{
+  margin-top: 10%;
+  float: right;
+
+}
+.nextpage{
+  float: right;
+  margin-top: 10%;
+}
+
+.previouspage{
+  float: left;
+  margin-top: 10%;
+}
+.previouspage1{
+  margin-right: 94%;
+}
+.submit{
+  margin-left: 50%;
+}
