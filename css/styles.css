@@ -1,6 +1,9 @@
+#page1{
+  display: none;
+}
 #page2{
   display: none;
 }
-#page3{
+#alert{
   display: none;
 }
