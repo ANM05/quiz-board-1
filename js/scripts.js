@@ -138,9 +138,15 @@ $('.nextpage').click(function(){//ONCLICK, PERFORM CHECK IF ANY LI ITEM IS UNCHE
   
 })
 
-$('.previouspage').click(function(){
+$('.previouspage1').click(function(){//ONCLICK TAKES YOU BACK TO PREVIOUS PAGE 1
   location.replace(this.href)
-  $('#page1').show()
-  $('#page2').hide()
+  $('#page1').show();
+  $('#page2').hide();
+      
+})
+$('.previouspage').click(function(){//ONCLICK TAKES YOU BACK TO PREVIOUS PAGE 2
+  location.replace(this.href)
+  $('#introduction').show();
+  $('#page1').hide();
       
 })
