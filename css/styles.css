@@ -6,6 +6,10 @@
   display: none;
 }
 
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 .alert {
   display: none;
 }
@@ -58,4 +62,9 @@
 
 .submit {
   margin-left: 50%;
+}
+
+h6 {
+  font-size: 12;
+  font-weight: bold;
 }

@@ -1,5 +1,5 @@
 //UI LOGIC
-var choices = ['question1:chocolate', 'question2:vanilla'] //STORES CONCACTED FORM OF ANSWER AND QUESTION ID
+var choices = ['question1:chocolate', 'question2:vanilla', 'question3:Cookies & Cream', 'question4:Mint'] //STORES CONCACTED FORM OF ANSWER AND QUESTION ID
 var questionids = []; //CONTAINS ALL PULLED QUESTION IDS
 var answers = []; //CONTAINS ALL INPUT ANSWERS
 var results = []; //CONTAINS CONCATED USER ANSWERS AND QUESTION IDS
@@ -101,6 +101,7 @@ function traverse() { //FUNCTION TO TRAVERSE THROUGH PAGE LAYOUT AND FIND SPECIF
 function output() { //FUNCTION TO OUTPUT RESULTS
   if (marks <= 4) {
     $('#marks').text('Total Marks: = ' + marks)
+
   } else {
     $('#marks').text('you cannot re submit marks')
   }
@@ -149,13 +150,11 @@ var marks = 0;
 function compare(list1, list2) { ///FUNCTION TO COMPARE ENTITIES IN TWO DIFFERENT ARRAYS AND COUNT TOTAL MARKS
 
   for (x = 0; x < list1.length; x += 1, marks <= 4) {
-    do {
-
-      marks += 1;
-
+    if (list2.includes(list1[x])) {
+      marks += 1
+    } else {
+      marks += 0
     }
-    while (list1[x] in list2)
-
 
   }
   output();
