@@ -1,5 +1,5 @@
 //UI LOGIC
-var choices = ['question1:chocolate', 'question2:vanilla', 'question3:Cookies & Cream', 'question4:Mint'] //STORES CONCACTED FORM OF ANSWER AND QUESTION ID
+var choices = ['question1:chocolate', 'question2:vanilla', 'question3:cookiesandcream', 'question4:mint'] //STORES CONCACTED FORM OF ANSWER AND QUESTION ID
 var questionids = []; //CONTAINS ALL PULLED QUESTION IDS
 var answers = []; //CONTAINS ALL INPUT ANSWERS
 var results = []; //CONTAINS CONCATED USER ANSWERS AND QUESTION IDS
@@ -140,7 +140,6 @@ function concantenate() { //FUNCTION TO CONCAT QUESTIONID AND ANSWER
 
   }
 
-
   compare(results, choices)
 
 }
@@ -149,9 +148,10 @@ var marks = 0;
 
 function compare(list1, list2) { ///FUNCTION TO COMPARE ENTITIES IN TWO DIFFERENT ARRAYS AND COUNT TOTAL MARKS
 
-  for (x = 0; x < list1.length; x += 1, marks <= 4) {
+  for (x = 0; x < list1.length; x += 1) {
     if (list2.includes(list1[x])) {
       marks += 1
+      
     } else {
       marks += 0
     }
