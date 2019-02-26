@@ -1,5 +1,5 @@
 //UI LOGIC
-var choices = ['question1:chocolate', 'question2:vanilla', 'question3:cookiesandcream', 'question4:mint'] //STORES CONCACTED FORM OF ANSWER AND QUESTION ID
+var choices = ['question1:script', 'question2:document.getelement(#element).innerHtml="String"', 'question3:headandbody', 'question4:True'] //STORES CONCACTED FORM OF ANSWER AND QUESTION ID
 var questionids = []; //CONTAINS ALL PULLED QUESTION IDS
 var answers = []; //CONTAINS ALL INPUT ANSWERS
 var results = []; //CONTAINS CONCATED USER ANSWERS AND QUESTION IDS
@@ -151,7 +151,7 @@ function compare(list1, list2) { ///FUNCTION TO COMPARE ENTITIES IN TWO DIFFEREN
   for (x = 0; x < list1.length; x += 1) {
     if (list2.includes(list1[x])) {
       marks += 1
-      
+
     } else {
       marks += 0
     }
